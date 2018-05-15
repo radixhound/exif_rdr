@@ -14,8 +14,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-$:.unshift File.join(File.dirname(__FILE__), '..', 'src')
-require 'byebug'
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

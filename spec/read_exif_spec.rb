@@ -22,8 +22,7 @@ RSpec.describe ReadExif do
     it "gets the exif data of all files" do
       expect(read).to be_an_instance_of(Array)
       expect(read.length).to eq(5)
-      expect(read.first).to include(:filename, :latitude, :longitude)
+      expect(read.first).to include(:filename, :latitude, :longitude, :status)
     end
   end
-
 end

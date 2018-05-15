@@ -1,4 +1,4 @@
-require 'exif'
+require 'exifr/jpeg'
 
 # EXIF is supported in TIFF and JPEG files
 class ReadExif
@@ -20,10 +20,10 @@ class ReadExif
 
   def read
     @filenames.map do |filename|
-      begin
-        data = Exif::Data.new(File.open(filename))
-        { filename: filename, latitude: data.gps_latitude, longitude: data.gps_longitude, status: 'success' }
-      rescue Exif::NotReadable
+      data = EXIFR::JPEG.new(filename)
+      if data.exif?
+        { filename: filename, latitude: data.gps&.latitude, longitude: data.gps&.longitude, status: 'success' }
+      else
         { filename: filename, latitude: '', longitude: '', status: 'Undreadable or no EXIF data'}
       end
     end

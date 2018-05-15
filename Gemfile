@@ -4,7 +4,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem "exif"
-gem "rspec"
+# gem "byebug"
+gem "exifr"
 gem "slop", "~> 4.0"
-gem "byebug"
+gem "rspec"
+gem "slim"

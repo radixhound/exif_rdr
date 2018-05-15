@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title CSV Exif Data
+
+  body
+    h1 Exif Data for Image Files
+
+    table
+      tbody
+        tr
+          th Filename
+          th Latitude
+          th Longitude
+          th Status
+        - rows.each do |row|
+          tr
+            td= row[:filename]
+            td= row[:latitude]
+            td= row[:longitude]
+            td= row[:status]
+
